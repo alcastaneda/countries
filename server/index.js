@@ -1,7 +1,7 @@
-const sift = require('sift');
-const provinces = require('provinces');
-const {ApolloServer, gql} = require('apollo-server');
-const {continents, countries, languages} = require('countries-list');
+const sift = require("sift");
+const provinces = require("provinces");
+const { ApolloServer, gql } = require("apollo-server");
+const { continents, countries, languages } = require("countries-list");
 
 const typeDefs = gql`
   type Continent {
@@ -86,7 +86,7 @@ function operatorsToSift(operators) {
   return Object.entries(operators).reduce(
     (acc, [operator, value]) => ({
       ...acc,
-      ['$' + operator]: value
+      ["$" + operator]: value
     }),
     {}
   );
@@ -96,7 +96,7 @@ const resolvers = {
   Country: {
     capital: country => country.capital || null,
     currency: country => country.currency || null,
-    continent: ({continent}) => ({
+    continent: ({ continent }) => ({
       code: continent,
       name: continents[continent]
     }),
@@ -128,7 +128,7 @@ const resolvers = {
     rtl: language => Boolean(language.rtl)
   },
   Query: {
-    continent(parent, {code}) {
+    continent(parent, { code }) {
       const name = continents[code];
       return (
         name && {
@@ -137,14 +137,14 @@ const resolvers = {
         }
       );
     },
-    continents: (parent, {filter}) =>
+    continents: (parent, { filter }) =>
       Object.entries(continents)
         .map(([code, name]) => ({
           code,
           name
         }))
         .filter(filterToSift(filter)),
-    country(parent, {code}) {
+    country(parent, { code }) {
       const country = countries[code];
       return (
         country && {
@@ -153,14 +153,14 @@ const resolvers = {
         }
       );
     },
-    countries: (parent, {filter}) =>
+    countries: (parent, { filter }) =>
       Object.entries(countries)
         .map(([code, country]) => ({
           ...country,
           code
         }))
         .filter(filterToSift(filter)),
-    language(parent, {code}) {
+    language(parent, { code }) {
       const language = languages[code];
       return (
         language && {
@@ -169,7 +169,7 @@ const resolvers = {
         }
       );
     },
-    languages: (parent, {filter}) =>
+    languages: (parent, { filter }) =>
       Object.entries(languages)
         .map(([code, language]) => ({
           ...language,
@@ -189,6 +189,6 @@ const server = new ApolloServer({
   }
 });
 
-server.listen({port: process.env.PORT || 4000}).then(({url}) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });

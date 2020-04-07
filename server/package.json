@@ -1,4 +1,5 @@
 {
+  "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "pretest": "eslint index.js",
@@ -8,10 +9,13 @@
     "extends": "@trevorblades"
   },
   "dependencies": {
+    "@apollo/client": "^3.0.0-beta.43",
     "apollo-server": "^2.10.1",
     "countries-list": "^2.5.4",
     "graphql": "^14.6.0",
     "provinces": "^1.11.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sift": "^12.0.0"
   },
   "devDependencies": {
