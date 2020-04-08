@@ -9,7 +9,7 @@ import { RouteComponentProps } from "@reach/router";
 
 // export default Launches;
 
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import ReactDOM from "react-dom";
 import { ApolloClient, InMemoryCache, gql, useQuery } from "@apollo/client";
 
@@ -31,7 +31,7 @@ const LIST_COUNTRIES = gql`
 
 interface LaunchesProps extends RouteComponentProps {}
 
-const CountrySelect: React.FC<LaunchesProps> = () => {
+const CountrySelect: React.FC<RouteComponentProps> = () => {
   const [country, setCountry] = useState("US");
   const { data, loading, error } = useQuery(LIST_COUNTRIES, { client });
   if (loading || error) {
