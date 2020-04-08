@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.0.0-beta.43",
     "@apollo/react-hooks": "3.0.0",
     "@reach/router": "^1.2.1",
     "@types/node": "^12.12.14",
@@ -13,13 +14,13 @@
     "apollo-client": "^2.6.3",
     "apollo-link-http": "^1.5.15",
     "emotion": "^9.2.12",
-    "graphql": "^14.4.2",
+    "graphql": "^14.6.0",
     "graphql-tag": "^2.10.1",
     "polished": "^3.4.1",
-    "react": "^16.9.0-alpha.0",
-    "react-dom": "^16.9.0-alpha.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-emotion": "^9.2.12",
-    "react-scripts": "3.0.1",
+    "react-scripts": "^3.4.1",
     "typescript": "^3.7.3"
   },
   "scripts": {
