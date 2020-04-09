@@ -2,7 +2,7 @@
 // import { Router } from "@reach/router";
 
 // // import Launch from './launch';
-// import CountrySelect from "./launches";
+// import CountryData from "./launches";
 // // import Cart from './cart';
 // // import Profile from './profile';
 // import { Footer, PageContainer } from "../components";
@@ -11,7 +11,7 @@
 //   return (
 //     <Fragment>
 //       <Router primary={false} component={Fragment}>
-//         <CountrySelect path="/" />
+//         <CountryData path="/" />
 //       </Router>
 //     </Fragment>
 //   );
